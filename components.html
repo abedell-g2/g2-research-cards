@@ -37,6 +37,7 @@
         </div>
       </div>
       <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-gray-500">
+        <a href="#research" class="hover:text-gray-900">Research</a>
         <a href="#concept" class="hover:text-gray-900">Concept</a>
         <a href="#discovery" class="hover:text-gray-900">Discovery</a>
         <a href="#product-card" class="hover:text-gray-900">Product Card</a>
@@ -49,6 +50,108 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-8 py-12">
+
+
+    <!-- ── RESEARCH SUMMARY ───────────────────────────────── -->
+    <section id="research" class="mb-20">
+      <div class="mb-8">
+        <p class="section-label mb-2">Foundation</p>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">5 Query Shapes for Software Research</h2>
+        <p class="text-gray-500 max-w-2xl">Based on how buyers research business software on review sites. Each shape represents a distinct intent pattern — the signal in the query determines what a genuinely useful response looks like.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+
+        <!-- Shape 1 -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-g2 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">1</span>
+              <p class="text-sm font-semibold text-gray-900">Category Discovery</p>
+            </div>
+            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase" style="font-size:10px">Pain-first</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 ml-8">Signal: <span class="font-mono bg-gray-100 px-1 rounded">"I need something to help me with X"</span> — user knows the pain, not the category</p>
+          <ul class="ml-8 space-y-1">
+            <li class="text-xs text-gray-400">"I need a better way to manage business expenses"</li>
+            <li class="text-xs text-gray-400">"Software to help our team communicate better"</li>
+            <li class="text-xs text-gray-400">"Something to track our sales pipeline"</li>
+          </ul>
+        </div>
+
+        <!-- Shape 2 -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-g2 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">2</span>
+              <p class="text-sm font-semibold text-gray-900">Product Info</p>
+            </div>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase" style="font-size:10px">Named product</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 ml-8">Signal: <span class="font-mono bg-gray-100 px-1 rounded">"Is [product] good?"</span> — highest confidence, user already has a product in mind</p>
+          <ul class="ml-8 space-y-1">
+            <li class="text-xs text-gray-400">"Is Salesforce worth it for a small business?"</li>
+            <li class="text-xs text-gray-400">"How good is HubSpot for marketing?"</li>
+            <li class="text-xs text-gray-400">"What do people think of Monday.com?"</li>
+          </ul>
+        </div>
+
+        <!-- Shape 3 -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-g2 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">3</span>
+              <p class="text-sm font-semibold text-gray-900">Comparison</p>
+            </div>
+            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase" style="font-size:10px">Evaluating</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 ml-8">Signal: <span class="font-mono bg-gray-100 px-1 rounded">"[product A] vs [product B]"</span> — high purchase intent, narrowing down a shortlist</p>
+          <ul class="ml-8 space-y-1">
+            <li class="text-xs text-gray-400">"Salesforce vs HubSpot for mid-market"</li>
+            <li class="text-xs text-gray-400">"Asana vs Monday.com for project management"</li>
+            <li class="text-xs text-gray-400">"Zendesk vs Intercom for customer support"</li>
+          </ul>
+        </div>
+
+        <!-- Shape 4 -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-g2 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">4</span>
+              <p class="text-sm font-semibold text-gray-900">Alternatives</p>
+            </div>
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase" style="font-size:10px">Switching intent</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 ml-8">Signal: <span class="font-mono bg-gray-100 px-1 rounded">"Alternatives to [product]"</span> — already using something, actively looking to leave</p>
+          <ul class="ml-8 space-y-1">
+            <li class="text-xs text-gray-400">"Alternatives to Salesforce that are easier to use"</li>
+            <li class="text-xs text-gray-400">"Cheaper alternatives to Zendesk"</li>
+            <li class="text-xs text-gray-400">"Something like Notion but with better task management"</li>
+          </ul>
+        </div>
+
+        <!-- Shape 5 — full width -->
+        <div class="bg-white rounded-xl border border-gray-100 p-5 shadow-sm col-span-2">
+          <div class="flex items-start justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-g2 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">5</span>
+              <p class="text-sm font-semibold text-gray-900">Best-in-Category</p>
+            </div>
+            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase" style="font-size:10px">Open exploration</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 ml-8">Signal: <span class="font-mono bg-gray-100 px-1 rounded">"Best [category] software"</span> — knows the category, wants a trusted starting point</p>
+          <ul class="ml-8 grid grid-cols-3 gap-x-6 gap-y-1">
+            <li class="text-xs text-gray-400">"Best CRM software for small business"</li>
+            <li class="text-xs text-gray-400">"Top project management tools for remote teams"</li>
+            <li class="text-xs text-gray-400">"Best help desk software with a free tier"</li>
+            <li class="text-xs text-gray-400">"Best HR software for a 50-person company"</li>
+            <li class="text-xs text-gray-400">"Highest rated video conferencing tools"</li>
+            <li class="text-xs text-gray-400">"Top-rated sales engagement platforms"</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
 
 
     <!-- ── CONCEPT ─────────────────────────────────────────── -->
