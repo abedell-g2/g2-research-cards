@@ -39,16 +39,10 @@
         </div>
       </div>
       <nav class="hidden md:flex items-center gap-5 text-xs font-medium text-gray-500">
-        <a href="#research" class="hover:text-gray-900">Research</a>
-        <a href="#concept" class="hover:text-gray-900">Concept</a>
-        <a href="#discovery" class="hover:text-gray-900">Discovery</a>
-        <a href="#ai-product" class="hover:text-gray-900">Product Card</a>
-        <a href="#ai-comparison" class="hover:text-gray-900">Comparison</a>
-        <a href="#ai-alternatives" class="hover:text-gray-900">Alternatives</a>
-        <a href="#ai-rankings" class="hover:text-gray-900">Rankings</a>
-        <a href="#trust" class="hover:text-gray-900">Trust &amp; Privacy</a>
-        <a href="#build-vs-buy" class="hover:text-gray-900">Build vs Buy</a>
-        <a href="#grid-states" class="hover:text-gray-900">Grid States</a>
+        <a href="#research" class="hover:text-gray-900">Foundation</a>
+        <a href="#concept" class="hover:text-gray-900">Core Idea</a>
+        <a href="#discovery" class="hover:text-gray-900">Examples</a>
+        <a href="#grid-states" class="hover:text-gray-900">In Context</a>
       </nav>
     </div>
   </header>
@@ -1303,6 +1297,438 @@
             <div class="px-4 py-3 bg-gray-800 border-t border-gray-700">
               <p class="text-xs text-purple-300 font-semibold mb-0.5">Based on "full dev team" →</p>
               <p class="text-xs text-gray-300">Consider building with <span class="text-purple-300 font-medium">Anthropic API</span> or <span class="text-purple-300 font-medium">OpenAI API</span>. Faster, cheaper at scale, fully customizable.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ── SHAPE 8: ACCURACY & RELIABILITY ─────────────────── -->
+    <section id="accuracy" class="mb-20">
+      <div class="flex items-center gap-3 mb-1">
+        <p class="section-label">Shape 8 — "Is it actually accurate?"</p>
+        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">AI-nuanced</span>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Accuracy &amp; Reliability</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">Traditional software either works or doesn't. AI software produces outputs that can be confidently wrong — and buyers know it. Accuracy questions require a different response surface: reviewer signals, hallucination frequency, model version, and use-case-specific caveats.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- Accuracy profile -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Single product · "How accurate is ChatGPT for legal research?"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-gray-900 flex items-center justify-center text-xs font-bold text-white">C</div>
+                <p class="text-sm font-semibold text-gray-900">ChatGPT</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="model-tag">GPT-4o</span>
+                <span class="text-xs font-semibold g2-purple">★ 4.6</span>
+              </div>
+            </div>
+            <div class="p-4 space-y-3">
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Accuracy signals from reviewers</p>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-600">Factual accuracy (general)</span>
+                    <span class="trust-yes">High</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-600">Legal / regulatory content</span>
+                    <span class="trust-partial">Verify required</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-600">Hallucination frequency</span>
+                    <span class="trust-partial">Occasional on complex tasks</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-600">Cites sources</span>
+                    <span class="trust-no">Not by default</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-amber-50 border border-amber-100 rounded-lg p-3">
+                <p class="text-xs text-amber-800"><span class="font-semibold">For legal research:</span> Best for first-draft summaries and research starting points — not final legal opinions. Verify all citations independently.</p>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">See what legal professionals say →</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accuracy comparison -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Comparison · "Which AI coding assistant is most accurate?"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">AI Coding Assistants — Accuracy</p>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Cursor</p>
+                  <p class="text-xs text-gray-400">Strongest on multi-file context</p>
+                </div>
+                <span class="model-tag">Claude 3.5</span>
+                <span class="trust-yes ml-2">Accurate</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">GitHub Copilot</p>
+                  <p class="text-xs text-gray-400">Best autocomplete, weaker on reasoning</p>
+                </div>
+                <span class="model-tag">GPT-4o</span>
+                <span class="trust-yes ml-2">Accurate</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Tabnine</p>
+                  <p class="text-xs text-gray-400">On-premise option, smaller context window</p>
+                </div>
+                <span class="model-tag">Custom</span>
+                <span class="trust-partial ml-2">Moderate</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-gray-50 border-t border-gray-100">
+              <p class="text-xs text-gray-500 italic">"Cursor catches logical bugs that Copilot misses — the Claude model makes a real difference" — G2 reviewer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SHAPE 9: PRICING & TOKEN COST ─────────────────────── -->
+    <section id="ai-pricing" class="mb-20">
+      <div class="flex items-center gap-3 mb-1">
+        <p class="section-label">Shape 9 — "How much will this actually cost?"</p>
+        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">AI-nuanced</span>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Pricing &amp; Token Cost</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">AI pricing models are foreign to most software buyers — per-token costs, context window limits, and per-seat vs. usage-based billing require explanation before comparison. The response needs to translate AI pricing into business cost at realistic usage levels.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- Token cost explainer -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">API cost · "How much does using GPT-4 cost per month?"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-sm font-semibold text-gray-900">OpenAI API — Cost at Scale</p>
+              <p class="text-xs text-gray-400 mt-0.5">Estimated at 500 requests/day, ~1k tokens each</p>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="grid grid-cols-3 text-xs px-4 py-2 bg-gray-50 text-gray-400 font-medium">
+                <span>Model</span>
+                <span class="text-center">Per 1k tokens</span>
+                <span class="text-right">Est. monthly</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs px-4 py-3 items-center hover:bg-purple-50 cursor-pointer">
+                <div class="flex items-center"><span class="model-tag">GPT-4o</span></div>
+                <span class="text-center text-gray-700 font-medium">$0.005</span>
+                <span class="text-right font-semibold g2-purple">~$75/mo</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs px-4 py-3 items-center hover:bg-purple-50 cursor-pointer">
+                <div class="flex items-center"><span class="model-tag">GPT-4o mini</span></div>
+                <span class="text-center text-gray-700 font-medium">$0.00015</span>
+                <span class="text-right font-semibold g2-purple">~$2/mo</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs px-4 py-3 items-center hover:bg-purple-50 cursor-pointer">
+                <div class="flex items-center"><span class="model-tag">Claude Sonnet</span></div>
+                <span class="text-center text-gray-700 font-medium">$0.003</span>
+                <span class="text-right font-semibold g2-purple">~$45/mo</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Compare against per-seat products →</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per-seat vs token comparison -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Model comparison · "ChatGPT Team vs API for a 10-person team"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Pricing Model Comparison — 10 users</p>
+            </div>
+            <div class="p-4">
+              <div class="grid grid-cols-3 gap-3 mb-4">
+                <div></div>
+                <div class="text-center">
+                  <div class="bg-g2-light rounded-lg px-2 py-1.5">
+                    <p class="text-xs font-bold g2-purple">ChatGPT Team</p>
+                    <p class="text-xs text-gray-400">Per-seat</p>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="bg-gray-800 rounded-lg px-2 py-1.5">
+                    <p class="text-xs font-bold text-purple-300">OpenAI API</p>
+                    <p class="text-xs text-gray-500">Usage-based</p>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="grid grid-cols-3 gap-3 items-center border-b border-gray-50 pb-2">
+                  <span class="text-gray-500 font-medium">Monthly cost</span>
+                  <span class="text-center font-semibold text-gray-700">$250/mo flat</span>
+                  <span class="text-center font-semibold text-gray-700">$30–500/mo</span>
+                </div>
+                <div class="grid grid-cols-3 gap-3 items-center border-b border-gray-50 pb-2">
+                  <span class="text-gray-500 font-medium">Scales with</span>
+                  <span class="text-center text-gray-700">Seats</span>
+                  <span class="text-center text-gray-700">Usage</span>
+                </div>
+                <div class="grid grid-cols-3 gap-3 items-center border-b border-gray-50 pb-2">
+                  <span class="text-gray-500 font-medium">Best for</span>
+                  <span class="text-center text-gray-700">Predictable spend</span>
+                  <span class="text-center text-gray-700">Variable workloads</span>
+                </div>
+                <div class="grid grid-cols-3 gap-3 items-center">
+                  <span class="text-gray-500 font-medium">Technical setup</span>
+                  <span class="text-center text-green-600">None</span>
+                  <span class="text-center text-amber-600">Required</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs text-gray-700"><span class="font-semibold g2-purple">Rule of thumb:</span> Under 5 heavy API users → token pricing likely wins. 10+ casual users → per-seat is simpler and predictable.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SHAPE 10: INTEGRATION & WORKFLOW FIT ──────────────── -->
+    <section id="ai-integrations" class="mb-20">
+      <div class="flex items-center gap-3 mb-1">
+        <p class="section-label">Shape 10 — "AI that works inside my existing tools"</p>
+        <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">Standard</span>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Integration &amp; Workflow Fit</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">Many AI buyers aren't looking for a new app — they want AI inside the tools they already use. Queries signal which host tool matters. The response needs to surface native integrations and depth of fit, not just a generic tool list.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- Integration search -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Integration depth · "AI assistant that works inside Google Docs"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">AI for Google Workspace</p>
+              <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium ml-auto">Native ✓</span>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Gemini for Workspace</p>
+                  <p class="text-xs text-gray-400">Built-in to Docs, Sheets, Gmail</p>
+                </div>
+                <span class="trust-yes">Native</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Jasper</p>
+                  <p class="text-xs text-gray-400">Chrome extension for Docs</p>
+                </div>
+                <span class="trust-partial">Extension</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Notion AI</p>
+                  <p class="text-xs text-gray-400">Move content to Notion for AI access</p>
+                </div>
+                <span class="trust-partial">Separate</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-gray-50 border-t border-gray-100">
+              <p class="text-xs text-gray-500"><span class="font-medium text-gray-700">Native</span> = embedded in product &nbsp;·&nbsp; <span class="font-medium text-gray-700">Extension</span> = plugin/add-on &nbsp;·&nbsp; <span class="font-medium text-gray-700">Separate</span> = copy-paste workflow</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CRM integration -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">CRM integration · "Best AI that integrates with Salesforce"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">AI Sales Tools — Salesforce Integrated</p>
+              <div class="flex gap-1.5 flex-wrap">
+                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Salesforce</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-medium cursor-pointer hover:bg-gray-200">HubSpot</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-medium cursor-pointer hover:bg-gray-200">Pipedrive</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Gong</p>
+                  <p class="text-xs text-gray-400">Deep Salesforce sync · Auto-logs calls</p>
+                </div>
+                <span class="trust-yes">Deep</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Einstein AI</p>
+                  <p class="text-xs text-gray-400">Native Salesforce AI — no integration needed</p>
+                </div>
+                <span class="trust-yes">Native</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Outreach</p>
+                  <p class="text-xs text-gray-400">Bi-directional sync · AI email cadences</p>
+                </div>
+                <span class="trust-yes">Deep</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">See all Salesforce-integrated AI tools →</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SHAPE 11: FEATURE-QUALIFIED SEARCH ────────────────── -->
+    <section id="ai-feature-search" class="mb-20">
+      <div class="flex items-center gap-3 mb-1">
+        <p class="section-label">Shape 11 — "[Category] with [features] for [context]"</p>
+        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-medium">AI-nuanced</span>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Feature-Qualified Search</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">The highest-specificity AI query: category known, AI features named, deployment context given. Standard rankings don't work here — every result needs to be scored against the stated requirements and annotated for partial matches.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- Feature-matched ranking -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Feature match · "AI help desk with voice agent and live chat for enterprise ecommerce"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">AI Help Desk — Feature Match</p>
+              <div class="flex gap-1.5">
+                <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-medium">Voice Agent</span>
+                <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-medium">Live Chat</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium">Enterprise</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Intercom</p>
+                  <p class="text-xs text-gray-400">Best for ecommerce support flows</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="trust-yes">Voice ✓</span>
+                  <span class="trust-yes">Chat ✓</span>
+                  <span class="trust-yes">Ent ✓</span>
+                </div>
+                <span class="text-xs font-semibold g2-purple ml-2">★ 4.5</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Freshdesk</p>
+                  <p class="text-xs text-gray-400">AI-native via Freddy AI</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="trust-yes">Voice ✓</span>
+                  <span class="trust-yes">Chat ✓</span>
+                  <span class="trust-partial">Ent ~</span>
+                </div>
+                <span class="text-xs font-semibold g2-purple ml-2">★ 4.4</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Zendesk</p>
+                  <p class="text-xs text-gray-400">Largest enterprise footprint</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="trust-partial">Voice ~</span>
+                  <span class="trust-yes">Chat ✓</span>
+                  <span class="trust-yes">Ent ✓</span>
+                </div>
+                <span class="text-xs font-semibold g2-purple ml-2">★ 4.3</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs text-gray-700"><span class="font-semibold g2-purple">Feature note:</span> Voice agent support varies by plan — Intercom's Fin AI handles voice natively; Zendesk requires an add-on.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-attribute match -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Multi-attribute · "AI contract tool that's GDPR compliant and works with Notion"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">AI Contract Tools — Requirement Match</p>
+              <div class="flex gap-1.5 flex-wrap">
+                <span class="compliance-yes">GDPR ✓</span>
+                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-medium">Notion API</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Ironclad</p>
+                  <p class="text-xs text-gray-400">GDPR + Notion integration available</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="compliance-yes">GDPR</span>
+                  <span class="trust-yes">Notion ✓</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">DocuSign CLM</p>
+                  <p class="text-xs text-gray-400">GDPR certified · Notion via Zapier</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="compliance-yes">GDPR</span>
+                  <span class="trust-partial">Notion ~</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">SpotDraft</p>
+                  <p class="text-xs text-gray-400">GDPR · API available for Notion sync</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <span class="compliance-yes">GDPR</span>
+                  <span class="trust-partial">Notion ~</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Filter by more requirements →</p>
             </div>
           </div>
         </div>
