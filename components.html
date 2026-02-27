@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G2.ai — Intent UI Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f5f4fb; color: #1a1a2e; }
+    .g2-purple { color: #5746b2; }
+    .bg-g2 { background: #5746b2; }
+    .border-g2 { border-color: #5746b2; }
+    .bg-g2-light { background: #ebe9f6; }
+    .ring-g2 { --tw-ring-color: rgba(87,70,178,0.2); }
+    .clarity-bar { height: 4px; border-radius: 2px; background: #e5e7eb; overflow: hidden; }
+    .clarity-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, #a78bfa, #5746b2); transition: width 0.3s; }
+    .stage-divider { border-left: 2px dashed #d1d5db; margin-left: 20px; padding-left: 24px; padding-bottom: 8px; }
+    .winner-a { background: #ede9fe; color: #5746b2; }
+    .winner-b { background: #ede9fe; color: #5746b2; }
+    .tie-badge { background: #f3f4f6; color: #6b7280; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9ca3af; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Page Header -->
+  <header class="bg-white border-b border-gray-100 px-8 py-5 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-g2 flex items-center justify-center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div>
+          <p class="font-semibold text-sm text-gray-900">G2.ai — Intent UI Components</p>
+          <p class="text-xs text-gray-400">Component playground · Not wired to production</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-gray-500">
+        <a href="#concept" class="hover:text-gray-900">Concept</a>
+        <a href="#discovery" class="hover:text-gray-900">Discovery</a>
+        <a href="#product-card" class="hover:text-gray-900">Product Card</a>
+        <a href="#comparison" class="hover:text-gray-900">Comparison</a>
+        <a href="#alternatives" class="hover:text-gray-900">Alternatives</a>
+        <a href="#rankings" class="hover:text-gray-900">Rankings</a>
+        <a href="#grid-states" class="hover:text-gray-900">Grid States</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-8 py-12">
+
+
+    <!-- ── CONCEPT ─────────────────────────────────────────── -->
+    <section id="concept" class="mb-20">
+      <div class="mb-8">
+        <p class="section-label mb-2">The Core Idea</p>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">The Blurry Picture</h2>
+        <p class="text-gray-500 max-w-2xl">As a user types, their intent moves from completely unknown toward a specific, answerable question. The grid below the prompt should respond to that progression — starting broad, getting precise. Each stage below shows what the user typed and what the grid should show.</p>
+      </div>
+
+      <!-- Stage progression -->
+      <div class="space-y-0">
+
+        <!-- Stage 1 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center pt-1">
+            <div class="w-10 h-10 rounded-full bg-g2 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</div>
+            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-10 flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <p class="text-sm font-semibold text-gray-900">Nothing typed yet</p>
+              <div class="clarity-bar w-32"><div class="clarity-fill" style="width:0%"></div></div>
+              <span class="text-xs text-gray-400">No signal</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-4">Show default state — orient the user to what's possible</p>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="bg-white rounded-xl p-4 border border-gray-100 text-center cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <div class="w-9 h-9 rounded-lg bg-g2-light flex items-center justify-center mx-auto mb-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5746b2" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-gray-800 mb-1">Research a product</p>
+                <p class="text-xs text-gray-400">Ratings, reviews, pros &amp; cons</p>
+              </div>
+              <div class="bg-white rounded-xl p-4 border border-gray-100 text-center cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <div class="w-9 h-9 rounded-lg bg-g2-light flex items-center justify-center mx-auto mb-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5746b2" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-gray-800 mb-1">Compare products</p>
+                <p class="text-xs text-gray-400">Side-by-side breakdown</p>
+              </div>
+              <div class="bg-white rounded-xl p-4 border border-gray-100 text-center cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <div class="w-9 h-9 rounded-lg bg-g2-light flex items-center justify-center mx-auto mb-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5746b2" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-gray-800 mb-1">Find alternatives</p>
+                <p class="text-xs text-gray-400">What to consider switching to</p>
+              </div>
+              <div class="bg-white rounded-xl p-4 border border-gray-100 text-center cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <div class="w-9 h-9 rounded-lg bg-g2-light flex items-center justify-center mx-auto mb-3">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5746b2" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="text-xs font-semibold text-gray-800 mb-1">Best in category</p>
+                <p class="text-xs text-gray-400">Top-ranked by real users</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center pt-1">
+            <div class="w-10 h-10 rounded-full bg-g2 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</div>
+            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-10 flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <p class="text-sm font-semibold text-gray-900">User typed <span class="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-purple-700">"sal"</span></p>
+              <div class="clarity-bar w-32"><div class="clarity-fill" style="width:25%"></div></div>
+              <span class="text-xs text-gray-400">Product detected</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-4">A product is likely. Show a compact card + 2 related intent seeds to explore from here.</p>
+            <div class="grid grid-cols-3 gap-3">
+              <!-- Compact product card -->
+              <div class="bg-white rounded-xl p-4 border-2 border-g2 shadow-sm col-span-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-7 h-7 rounded-md bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                    <p class="text-xs text-gray-400">CRM</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold g2-purple">★ 4.3</span>
+                  <span class="text-xs text-gray-400">23,847 reviews</span>
+                </div>
+              </div>
+              <!-- Intent seed: compare -->
+              <div class="bg-white rounded-xl p-4 border border-dashed border-gray-200 cursor-pointer hover:border-purple-300 transition-all">
+                <p class="text-xs text-gray-400 mb-1">Compare</p>
+                <p class="text-sm font-semibold text-gray-700">Salesforce vs…</p>
+                <p class="text-xs text-gray-400 mt-1">Add a second product to compare</p>
+              </div>
+              <!-- Intent seed: alternatives -->
+              <div class="bg-white rounded-xl p-4 border border-dashed border-gray-200 cursor-pointer hover:border-purple-300 transition-all">
+                <p class="text-xs text-gray-400 mb-1">Alternatives</p>
+                <p class="text-sm font-semibold text-gray-700">What do people switch to?</p>
+                <p class="text-xs text-gray-400 mt-1">See top Salesforce alternatives</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center pt-1">
+            <div class="w-10 h-10 rounded-full bg-g2 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</div>
+            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-10 flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <p class="text-sm font-semibold text-gray-900">User typed <span class="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-purple-700">"salesforce"</span></p>
+              <div class="clarity-bar w-32"><div class="clarity-fill" style="width:50%"></div></div>
+              <span class="text-xs text-gray-400">Product confirmed</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-4">Full product card with enriched data. Intent seeds become more specific.</p>
+            <div class="grid grid-cols-3 gap-3">
+              <!-- Full product card -->
+              <div class="bg-white rounded-xl border-2 border-g2 shadow-sm overflow-hidden col-span-1">
+                <div class="p-4">
+                  <div class="flex items-start justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-8 h-8 rounded-lg bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                      <div>
+                        <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                        <p class="text-xs text-gray-400">CRM</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-bold g2-purple">★ 4.3</span>
+                  </div>
+                  <p class="text-xs text-gray-400 mb-3">23,847 reviews · Paid · Enterprise</p>
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-1.5"><span class="text-green-500 text-xs">✓</span><span class="text-xs text-gray-600">Customization &amp; integrations</span></div>
+                    <div class="flex items-center gap-1.5"><span class="text-green-500 text-xs">✓</span><span class="text-xs text-gray-600">Reporting &amp; analytics</span></div>
+                    <div class="flex items-center gap-1.5"><span class="text-red-400 text-xs">✗</span><span class="text-xs text-gray-600">Complex implementation</span></div>
+                    <div class="flex items-center gap-1.5"><span class="text-red-400 text-xs">✗</span><span class="text-xs text-gray-600">Pricing at scale</span></div>
+                  </div>
+                </div>
+                <div class="px-4 py-2 bg-gray-50 border-t border-gray-100">
+                  <p class="text-xs text-gray-500">Best for <span class="font-medium text-gray-700">Mid-market, Enterprise</span></p>
+                </div>
+              </div>
+              <!-- Compare seed - specific -->
+              <div class="bg-white rounded-xl p-4 border border-gray-100 cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <p class="text-xs text-gray-400 mb-2">Most compared with</p>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-gray-700">HubSpot Sales Hub</span>
+                    <span class="g2-purple">Compare →</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-gray-700">Pipedrive</span>
+                    <span class="g2-purple">Compare →</span>
+                  </div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-medium text-gray-700">Monday CRM</span>
+                    <span class="g2-purple">Compare →</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Alternatives seed - specific -->
+              <div class="bg-white rounded-xl p-4 border border-gray-100 cursor-pointer hover:border-purple-300 hover:shadow-sm transition-all">
+                <p class="text-xs text-gray-400 mb-2">Why people switch</p>
+                <p class="text-xs text-gray-600 mb-3 italic">"Too expensive and complex for our size"</p>
+                <div class="space-y-1.5">
+                  <p class="text-xs font-medium text-gray-700">→ HubSpot Sales Hub</p>
+                  <p class="text-xs font-medium text-gray-700">→ Pipedrive</p>
+                  <p class="text-xs font-medium text-gray-700">→ Zoho CRM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center pt-1">
+            <div class="w-10 h-10 rounded-full bg-g2 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">4</div>
+            <div class="w-px flex-1 bg-gray-200 mt-2"></div>
+          </div>
+          <div class="pb-10 flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <p class="text-sm font-semibold text-gray-900">User typed <span class="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-purple-700">"salesforce vs hubspot"</span></p>
+              <div class="clarity-bar w-32"><div class="clarity-fill" style="width:85%"></div></div>
+              <span class="text-xs text-gray-400">Intent locked: Compare</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-4">Comparison card takes over the full grid. No ambiguity left.</p>
+            <div class="bg-white rounded-xl border-2 border-g2 shadow-sm overflow-hidden max-w-xl">
+              <div class="px-5 py-3 border-b border-gray-100 bg-gray-50">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Head-to-head comparison</p>
+              </div>
+              <div class="p-5">
+                <div class="grid grid-cols-2 gap-6 mb-4">
+                  <div>
+                    <p class="font-semibold text-gray-900 text-sm">Salesforce CRM</p>
+                    <p class="text-xs text-gray-400">★ 4.3 · 23,847 reviews</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-gray-900 text-sm">HubSpot Sales Hub</p>
+                    <p class="text-xs text-gray-400">★ 4.4 · 11,962 reviews</p>
+                  </div>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="grid grid-cols-5 gap-2 items-center">
+                    <span class="text-gray-500 col-span-1">Ease of use</span>
+                    <span class="text-center font-medium text-gray-700">3.8</span>
+                    <span class="text-center text-gray-300">—</span>
+                    <span class="text-center font-medium text-gray-700">4.5</span>
+                    <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">HubSpot ✓</span>
+                  </div>
+                  <div class="grid grid-cols-5 gap-2 items-center">
+                    <span class="text-gray-500 col-span-1">Features</span>
+                    <span class="text-center font-medium text-gray-700">4.5</span>
+                    <span class="text-center text-gray-300">—</span>
+                    <span class="text-center font-medium text-gray-700">4.2</span>
+                    <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">Salesforce ✓</span>
+                  </div>
+                  <div class="grid grid-cols-5 gap-2 items-center">
+                    <span class="text-gray-500 col-span-1">Value</span>
+                    <span class="text-center font-medium text-gray-700">3.6</span>
+                    <span class="text-center text-gray-300">—</span>
+                    <span class="text-center font-medium text-gray-700">4.3</span>
+                    <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">HubSpot ✓</span>
+                  </div>
+                  <div class="grid grid-cols-5 gap-2 items-center">
+                    <span class="text-gray-500 col-span-1">Support</span>
+                    <span class="text-center font-medium text-gray-700">4.2</span>
+                    <span class="text-center text-gray-300">—</span>
+                    <span class="text-center font-medium text-gray-700">4.1</span>
+                    <span class="bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full text-center font-medium">Tie</span>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 py-3 bg-g2-light border-t border-purple-100">
+                <p class="text-xs text-gray-700"><span class="font-semibold g2-purple">Bottom line:</span> HubSpot for SMB and growing teams. Salesforce for enterprise with complex requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center pt-1">
+            <div class="w-10 h-10 rounded-full bg-g2 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">5</div>
+          </div>
+          <div class="pb-2 flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <p class="text-sm font-semibold text-gray-900">User typed <span class="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-purple-700">"best crm software"</span></p>
+              <div class="clarity-bar w-32"><div class="clarity-fill" style="width:90%"></div></div>
+              <span class="text-xs text-gray-400">Intent locked: Rankings</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-4">Category rankings card. No product detected — intent keyword drives it.</p>
+            <div class="bg-white rounded-xl border-2 border-g2 shadow-sm overflow-hidden max-w-sm">
+              <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Top CRM Software</p>
+                <span class="text-xs text-gray-400">G2 ratings</span>
+              </div>
+              <div class="divide-y divide-gray-50">
+                <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                  <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900">Salesforce CRM</p>
+                    <p class="text-xs text-gray-400">Best for Enterprise</p>
+                  </div>
+                  <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+                </div>
+                <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                  <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p>
+                    <p class="text-xs text-gray-400">Best for SMB</p>
+                  </div>
+                  <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+                </div>
+                <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                  <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900">Monday CRM</p>
+                    <p class="text-xs text-gray-400">Best rated overall</p>
+                  </div>
+                  <span class="text-xs font-semibold g2-purple">★ 4.6</span>
+                </div>
+                <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                  <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold flex-shrink-0">4</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900">Pipedrive</p>
+                    <p class="text-xs text-gray-400">Best for Sales teams</p>
+                  </div>
+                  <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+                </div>
+                <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                  <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold flex-shrink-0">5</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900">Zoho CRM</p>
+                    <p class="text-xs text-gray-400">Best value / free tier</p>
+                  </div>
+                  <span class="text-xs font-semibold g2-purple">★ 4.0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── DISCOVERY ─────────────────────────────────────── -->
+    <section id="discovery" class="mb-20">
+      <p class="section-label mb-2">Shape 1 — "I have a problem"</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Category Discovery</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">The hardest shape — user knows their pain but not the product or category. Queries arrive as use-cases, pricing constraints, specific features, integration needs, or open-ended descriptions. Each variant below shows a different signal and how to respond.</p>
+
+      <!-- Row 1: 2 columns -->
+      <div class="grid grid-cols-2 gap-6 mb-6">
+
+        <!-- Use-case match -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Use-case · "I need to manage business expenses"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs text-gray-400 mb-1">This sounds like</p>
+              <p class="text-sm font-semibold text-gray-900">Expense Management Software</p>
+            </div>
+            <div class="p-4">
+              <p class="text-xs text-gray-500 mb-3">Software that tracks, approves, and reports on business spending. Usually integrates with accounting tools.</p>
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Top picks</p>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">E</div><span class="text-sm text-gray-700">Expensify</span><span class="text-xs text-gray-400 ml-auto">★ 4.4</span></div>
+                <div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">C</div><span class="text-sm text-gray-700">Concur Expense</span><span class="text-xs text-gray-400 ml-auto">★ 4.0</span></div>
+                <div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">B</div><span class="text-sm text-gray-700">Brex</span><span class="text-xs text-gray-400 ml-auto">★ 4.7</span></div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Ask me to help find the right one for your team →</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing-qualified -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Pricing-qualified · "free project management for small team"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+              <p class="text-sm font-semibold text-gray-900">Project Management Software</p>
+              <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Free tier ✓</span>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">ClickUp</p>
+                  <p class="text-xs text-gray-400">Generous free tier · Unlimited tasks</p>
+                </div>
+                <span class="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium">Free</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Asana</p>
+                  <p class="text-xs text-gray-400">Free up to 15 users</p>
+                </div>
+                <span class="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-medium">Free</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Notion</p>
+                  <p class="text-xs text-gray-400">Free personal · $8/user for teams</p>
+                </div>
+                <span class="text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-medium">Freemium</span>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Compare pricing plans for all options →</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 2: 2 columns -->
+      <div class="grid grid-cols-2 gap-6 mb-6">
+
+        <!-- Feature-specific -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Feature-specific · "track employee hours and run payroll in one place"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs text-gray-400 mb-1">This sounds like</p>
+              <p class="text-sm font-semibold text-gray-900 mb-2">HR &amp; Payroll Software</p>
+              <div class="flex gap-2">
+                <span class="text-xs bg-g2 text-white px-2 py-0.5 rounded-full font-medium">Time tracking ✓</span>
+                <span class="text-xs bg-g2 text-white px-2 py-0.5 rounded-full font-medium">Payroll ✓</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Top picks matching both features</p>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">G</div>
+                  <div class="flex-1">
+                    <p class="text-sm text-gray-800 font-medium">Gusto</p>
+                    <p class="text-xs text-gray-400">Payroll + time tracking · SMB-focused</p>
+                  </div>
+                  <span class="text-xs g2-purple font-semibold">★ 4.5</span>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">R</div>
+                  <div class="flex-1">
+                    <p class="text-sm text-gray-800 font-medium">Rippling</p>
+                    <p class="text-xs text-gray-400">Full HRIS suite · Highly automated</p>
+                  </div>
+                  <span class="text-xs g2-purple font-semibold">★ 4.8</span>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">B</div>
+                  <div class="flex-1">
+                    <p class="text-sm text-gray-800 font-medium">BambooHR</p>
+                    <p class="text-xs text-gray-400">HR-first · Add-on payroll available</p>
+                  </div>
+                  <span class="text-xs g2-purple font-semibold">★ 4.5</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Ask me to help find the right fit →</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integration-specific -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Integration-specific · "project management that connects with Slack and GitHub"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs text-gray-400 mb-2">Filtering for: integrates with</p>
+              <div class="flex gap-2">
+                <span class="text-xs bg-gray-800 text-white px-2 py-0.5 rounded-full font-medium">Slack</span>
+                <span class="text-xs bg-gray-800 text-white px-2 py-0.5 rounded-full font-medium">GitHub</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Linear</p>
+                  <p class="text-xs text-gray-400">Built for engineering teams</p>
+                </div>
+                <div class="flex gap-1">
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">Slack</span>
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">GitHub</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Jira</p>
+                  <p class="text-xs text-gray-400">Deep dev integrations</p>
+                </div>
+                <div class="flex gap-1">
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">Slack</span>
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">GitHub</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Asana</p>
+                  <p class="text-xs text-gray-400">Broader team workflows · Also integrates</p>
+                </div>
+                <div class="flex gap-1">
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">Slack</span>
+                  <span class="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-medium">GitHub</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs g2-purple font-medium cursor-pointer hover:underline">Filter by more integrations →</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 3: Ambiguous full-width -->
+      <div>
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Ambiguous · routes to a clarifying conversation</p>
+        <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden max-w-xl">
+          <div class="p-4">
+            <p class="text-xs text-gray-400 mb-1">You're asking about</p>
+            <p class="text-sm font-semibold text-gray-900 mb-3">"We need a better way to handle onboarding"</p>
+            <p class="text-xs text-gray-500 mb-4">This could mean a few things — help me narrow it down:</p>
+            <div class="space-y-2">
+              <button class="w-full text-left text-xs font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-purple-300 hover:bg-g2-light transition-all">Employee onboarding (HR software)</button>
+              <button class="w-full text-left text-xs font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-purple-300 hover:bg-g2-light transition-all">Customer onboarding (success / CS tools)</button>
+              <button class="w-full text-left text-xs font-medium text-gray-700 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 hover:border-purple-300 hover:bg-g2-light transition-all">User onboarding in our product (adoption tools)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ── PRODUCT CARD ────────────────────────────────────── -->
+    <section id="product-card" class="mb-20">
+      <p class="section-label mb-2">Shape 2 — "Is [product] good?"</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Product Card</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">The highest-confidence card. When a product name is detected, this is almost always what the user wants.</p>
+
+      <div class="grid grid-cols-3 gap-6">
+
+        <!-- Compact variant -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Compact · Early recognition</p>
+          <div class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-purple-300 hover:shadow transition-all cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-md bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+              </div>
+              <span class="text-sm font-bold g2-purple">★ 4.3</span>
+            </div>
+            <p class="text-xs text-gray-400">CRM · 23,847 reviews</p>
+          </div>
+        </div>
+
+        <!-- Full variant -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Full · Product confirmed</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm hover:border-purple-300 hover:shadow transition-all cursor-pointer overflow-hidden">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                    <p class="text-xs text-gray-400">CRM</p>
+                  </div>
+                </div>
+                <span class="text-sm font-bold g2-purple">★ 4.3</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-3">23,847 reviews · Paid · Enterprise</p>
+              <div class="grid grid-cols-2 gap-x-3 gap-y-1 mb-3">
+                <div class="flex items-center gap-1.5"><span class="text-green-500 text-xs">✓</span><span class="text-xs text-gray-600">Customization</span></div>
+                <div class="flex items-center gap-1.5"><span class="text-red-400 text-xs">✗</span><span class="text-xs text-gray-600">Implementation</span></div>
+                <div class="flex items-center gap-1.5"><span class="text-green-500 text-xs">✓</span><span class="text-xs text-gray-600">Integrations</span></div>
+                <div class="flex items-center gap-1.5"><span class="text-red-400 text-xs">✗</span><span class="text-xs text-gray-600">Pricing</span></div>
+                <div class="flex items-center gap-1.5"><span class="text-green-500 text-xs">✓</span><span class="text-xs text-gray-600">Reporting</span></div>
+                <div class="flex items-center gap-1.5"><span class="text-red-400 text-xs">✗</span><span class="text-xs text-gray-600">Learning curve</span></div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+              <p class="text-xs text-gray-500">Best for <span class="font-medium text-gray-700">Mid-market, Enterprise</span></p>
+              <span class="text-xs bg-g2-light g2-purple px-2 py-0.5 rounded-full font-medium">G2 Leader</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature-specific variant -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Feature-qualified · "salesforce reporting"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm hover:border-purple-300 hover:shadow transition-all cursor-pointer overflow-hidden">
+            <div class="p-4">
+              <div class="flex items-start justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                    <p class="text-xs text-gray-400">CRM</p>
+                  </div>
+                </div>
+                <span class="text-sm font-bold g2-purple">★ 4.3</span>
+              </div>
+              <div class="bg-g2-light rounded-lg p-3 mb-3">
+                <p class="text-xs font-semibold g2-purple mb-1">Reporting &amp; Analytics</p>
+                <div class="flex items-center gap-2 mb-1">
+                  <div class="flex-1 bg-purple-200 rounded-full h-1.5"><div class="bg-g2 h-1.5 rounded-full" style="width:88%"></div></div>
+                  <span class="text-xs font-semibold g2-purple">4.4</span>
+                </div>
+                <p class="text-xs text-gray-600">Rated highly by 89% of reviewers. Custom dashboards and Tableau integration praised most.</p>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-gray-50 border-t border-gray-100">
+              <p class="text-xs text-gray-500">Best for <span class="font-medium text-gray-700">Mid-market, Enterprise</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── COMPARISON CARD ────────────────────────────────── -->
+    <section id="comparison" class="mb-20">
+      <p class="section-label mb-2">Shape 3 — "[product] vs [product]"</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Comparison Card</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">Two variants — a seeded comparison (only one product typed yet, suggest likely second products) and a full head-to-head.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- Seeded comparison -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Seeded · "salesforce vs…"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="p-4 border-b border-gray-100">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 rounded-md bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">SF</div>
+                <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                <span class="text-gray-300 text-sm mx-1">vs</span>
+                <div class="w-7 h-7 rounded-md border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-300 text-sm">?</div>
+                <p class="text-sm text-gray-400">Pick a product…</p>
+              </div>
+              <p class="text-xs text-gray-400 mb-2">Most compared with Salesforce:</p>
+              <div class="flex flex-wrap gap-2">
+                <button class="text-xs font-medium g2-purple bg-g2-light px-3 py-1.5 rounded-full hover:bg-purple-200 transition-colors">HubSpot Sales Hub</button>
+                <button class="text-xs font-medium g2-purple bg-g2-light px-3 py-1.5 rounded-full hover:bg-purple-200 transition-colors">Pipedrive</button>
+                <button class="text-xs font-medium g2-purple bg-g2-light px-3 py-1.5 rounded-full hover:bg-purple-200 transition-colors">Monday CRM</button>
+                <button class="text-xs font-medium g2-purple bg-g2-light px-3 py-1.5 rounded-full hover:bg-purple-200 transition-colors">Zoho CRM</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full comparison -->
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Full · "salesforce vs hubspot"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="p-4">
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Salesforce CRM</p>
+                  <p class="text-xs text-gray-400">★ 4.3 · 23,847 reviews</p>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">HubSpot Sales Hub</p>
+                  <p class="text-xs text-gray-400">★ 4.4 · 11,962 reviews</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="grid grid-cols-5 gap-2 items-center">
+                  <span class="text-gray-500">Ease of use</span>
+                  <span class="text-center font-medium">3.8</span>
+                  <span class="text-center text-gray-300">·</span>
+                  <span class="text-center font-medium">4.5</span>
+                  <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium text-xs">HubSpot ✓</span>
+                </div>
+                <div class="grid grid-cols-5 gap-2 items-center">
+                  <span class="text-gray-500">Features</span>
+                  <span class="text-center font-medium">4.5</span>
+                  <span class="text-center text-gray-300">·</span>
+                  <span class="text-center font-medium">4.2</span>
+                  <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium text-xs">Salesforce ✓</span>
+                </div>
+                <div class="grid grid-cols-5 gap-2 items-center">
+                  <span class="text-gray-500">Value</span>
+                  <span class="text-center font-medium">3.6</span>
+                  <span class="text-center text-gray-300">·</span>
+                  <span class="text-center font-medium">4.3</span>
+                  <span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium text-xs">HubSpot ✓</span>
+                </div>
+                <div class="grid grid-cols-5 gap-2 items-center">
+                  <span class="text-gray-500">Support</span>
+                  <span class="text-center font-medium">4.2</span>
+                  <span class="text-center text-gray-300">·</span>
+                  <span class="text-center font-medium">4.1</span>
+                  <span class="bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full text-center font-medium text-xs">Tie</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-2.5 bg-g2-light border-t border-purple-100">
+              <p class="text-xs text-gray-700"><span class="font-semibold g2-purple">Bottom line:</span> HubSpot for SMB. Salesforce for enterprise.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── ALTERNATIVES ───────────────────────────────────── -->
+    <section id="alternatives" class="mb-20">
+      <p class="section-label mb-2">Shape 4 — "Alternatives to [product]"</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Alternatives List</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">Acknowledges the "why" behind switching before presenting options. The framing matters.</p>
+
+      <div class="grid grid-cols-2 gap-6">
+
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Standard · "alternatives to salesforce"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Why people leave Salesforce</p>
+              <p class="text-xs text-gray-500 italic">"Too expensive and complex for our size"</p>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p>
+                  <p class="text-xs text-gray-400">Easier · Free tier available</p>
+                </div>
+                <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Pipedrive</p>
+                  <p class="text-xs text-gray-400">Simpler · Sales-focused</p>
+                </div>
+                <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Zoho CRM</p>
+                  <p class="text-xs text-gray-400">Budget-friendly · Full suite</p>
+                </div>
+                <span class="text-xs font-semibold g2-purple">★ 4.0</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold flex-shrink-0">4</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Monday CRM</p>
+                  <p class="text-xs text-gray-400">Modern UI · Highly rated</p>
+                </div>
+                <span class="text-xs font-semibold g2-purple">★ 4.6</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold flex-shrink-0">5</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Freshsales</p>
+                  <p class="text-xs text-gray-400">AI-native · SMB-friendly</p>
+                </div>
+                <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Feature-qualified · "alternatives to salesforce with better support"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Sorted by: Support rating</p>
+              <div class="flex gap-2 mt-2">
+                <span class="text-xs bg-g2 text-white px-2 py-0.5 rounded-full font-medium">Support ✓</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium cursor-pointer hover:bg-gray-200">Ease of use</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium cursor-pointer hover:bg-gray-200">Value</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p>
+                  <p class="text-xs text-gray-400">Support ★ 4.5 vs Salesforce ★ 4.2</p>
+                </div>
+                <span class="text-xs font-semibold text-green-600">+0.3 ↑</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Freshsales</p>
+                  <p class="text-xs text-gray-400">Support ★ 4.7 vs Salesforce ★ 4.2</p>
+                </div>
+                <span class="text-xs font-semibold text-green-600">+0.5 ↑</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors cursor-pointer">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1">
+                  <p class="text-sm font-medium text-gray-900">Zoho CRM</p>
+                  <p class="text-xs text-gray-400">Support ★ 4.4 vs Salesforce ★ 4.2</p>
+                </div>
+                <span class="text-xs font-semibold text-green-600">+0.2 ↑</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── RANKINGS ───────────────────────────────────────── -->
+    <section id="rankings" class="mb-20">
+      <p class="section-label mb-2">Shape 5 — "Best [category] software"</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">Category Rankings</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">User has no product in mind — they want a trusted ranked starting point. Segment labels ("Best for SMB") are the key differentiator from a flat list.</p>
+
+      <div class="grid grid-cols-3 gap-6">
+
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Standard ranking</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Top CRM Software</p>
+              <span class="text-xs text-gray-400">G2 ratings</span>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Salesforce CRM</p><p class="text-xs text-gray-400">Best for Enterprise</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p><p class="text-xs text-gray-400">Best for SMB</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Monday CRM</p><p class="text-xs text-gray-400">Highest rated</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.6</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 text-xs font-bold flex-shrink-0">4</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Pipedrive</p><p class="text-xs text-gray-400">Best for Sales teams</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 text-xs font-bold flex-shrink-0">5</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Zoho CRM</p><p class="text-xs text-gray-400">Best value</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Segment-filtered · "best crm for small business"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Top CRM — Small Business</p>
+              <div class="flex gap-2">
+                <span class="text-xs bg-g2 text-white px-2 py-0.5 rounded-full font-medium">SMB ✓</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium cursor-pointer hover:bg-gray-200">Mid-market</span>
+                <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-medium cursor-pointer hover:bg-gray-200">Enterprise</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p><p class="text-xs text-gray-400">Free tier · Easy setup</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Pipedrive</p><p class="text-xs text-gray-400">Sales-focused · Affordable</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Zoho CRM</p><p class="text-xs text-gray-400">Budget · Full suite</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">Feature-filtered · "best crm with email automation"</p>
+          <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Top CRM — Email Automation</p>
+              <div class="flex gap-2 flex-wrap">
+                <span class="text-xs bg-g2 text-white px-2 py-0.5 rounded-full font-medium">Email automation ✓</span>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-50">
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">1</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">HubSpot Sales Hub</p><p class="text-xs text-gray-400">Email sequences built-in</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.4</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">2</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">ActiveCampaign</p><p class="text-xs text-gray-400">Automation-first</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.5</span>
+              </div>
+              <div class="flex items-center gap-3 px-4 py-2.5 hover:bg-purple-50 cursor-pointer transition-colors">
+                <span class="w-5 h-5 rounded-full bg-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">3</span>
+                <div class="flex-1"><p class="text-sm font-medium text-gray-900">Salesforce CRM</p><p class="text-xs text-gray-400">Via Marketing Cloud add-on</p></div>
+                <span class="text-xs font-semibold g2-purple">★ 4.3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── GRID STATES TOGETHER ───────────────────────────── -->
+    <section id="grid-states" class="mb-20">
+      <p class="section-label mb-2">Putting it together</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">The Grid in Context</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl">How the full grid below the prompt looks at each stage — all three columns visible together. Cards persist and refine rather than disappearing.</p>
+
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+        <!-- Mock prompt bar -->
+        <div class="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 mb-6 max-w-2xl">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <span class="text-sm text-gray-400 flex-1">salesforce vs hubspot</span>
+          <div class="w-1.5 h-4 bg-gray-400 rounded animate-pulse"></div>
+        </div>
+
+        <!-- The grid -->
+        <div class="grid grid-cols-3 gap-4">
+          <!-- Primary: Comparison card -->
+          <div class="col-span-2 bg-white rounded-xl border-2 border-g2 shadow-sm overflow-hidden">
+            <div class="px-4 py-3 bg-gray-50 border-b border-gray-100 flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Head-to-head</p>
+              <span class="text-xs bg-g2-light g2-purple px-2 py-0.5 rounded-full font-medium">Best match</span>
+            </div>
+            <div class="p-4">
+              <div class="grid grid-cols-2 gap-6 mb-4">
+                <div><p class="font-semibold text-gray-900 text-sm">Salesforce CRM</p><p class="text-xs text-gray-400">★ 4.3 · 23,847 reviews</p></div>
+                <div><p class="font-semibold text-gray-900 text-sm">HubSpot Sales Hub</p><p class="text-xs text-gray-400">★ 4.4 · 11,962 reviews</p></div>
+              </div>
+              <div class="space-y-2 text-xs mb-4">
+                <div class="grid grid-cols-5 gap-2 items-center"><span class="text-gray-500">Ease of use</span><span class="text-center font-medium">3.8</span><span class="text-center text-gray-300">·</span><span class="text-center font-medium">4.5</span><span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">HubSpot ✓</span></div>
+                <div class="grid grid-cols-5 gap-2 items-center"><span class="text-gray-500">Features</span><span class="text-center font-medium">4.5</span><span class="text-center text-gray-300">·</span><span class="text-center font-medium">4.2</span><span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">Salesforce ✓</span></div>
+                <div class="grid grid-cols-5 gap-2 items-center"><span class="text-gray-500">Value</span><span class="text-center font-medium">3.6</span><span class="text-center text-gray-300">·</span><span class="text-center font-medium">4.3</span><span class="bg-g2-light g2-purple px-1.5 py-0.5 rounded-full text-center font-medium">HubSpot ✓</span></div>
+              </div>
+              <div class="bg-g2-light rounded-lg px-3 py-2">
+                <p class="text-xs text-gray-700"><span class="font-semibold g2-purple">Bottom line:</span> HubSpot for SMB. Salesforce for enterprise with complex needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary: also considered -->
+          <div class="space-y-4">
+            <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+              <p class="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-3">Also considered</p>
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">P</div>
+                  <div><p class="text-xs font-medium text-gray-800">Pipedrive</p><p class="text-xs text-gray-400">★ 4.3</p></div>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">M</div>
+                  <div><p class="text-xs font-medium text-gray-800">Monday CRM</p><p class="text-xs text-gray-400">★ 4.6</p></div>
+                </div>
+                <div class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                  <div class="w-6 h-6 rounded bg-g2-light flex items-center justify-center text-xs font-bold g2-purple">Z</div>
+                  <div><p class="text-xs font-medium text-gray-800">Zoho CRM</p><p class="text-xs text-gray-400">★ 4.0</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-g2 rounded-xl p-4 text-white">
+              <p class="text-xs font-semibold mb-1 opacity-75">Not sure which is right?</p>
+              <p class="text-xs mb-3 opacity-90">Tell me about your team size and use case — I'll give you a direct recommendation.</p>
+              <button class="text-xs font-semibold bg-white g2-purple px-3 py-1.5 rounded-lg w-full hover:bg-purple-50 transition-colors">Help me decide →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="border-t border-gray-100 bg-white px-8 py-6 mt-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <p class="text-xs text-gray-400">G2.ai Intent UI Components · All data is mock / illustrative</p>
+      <p class="text-xs text-gray-400">Open <code class="bg-gray-100 px-1 py-0.5 rounded">docs/components.html</code> directly in your browser</p>
+    </div>
+  </footer>
+
+</body>
+</html>
